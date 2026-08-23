@@ -2,6 +2,6 @@ import tailwindcss from "@tailwindcss/vite";
 import type { UserConfig } from "vite";
 
 export default {
-  base: "/",
+  base: "/homepage",
   plugins: [tailwindcss()],
 } satisfies UserConfig;
