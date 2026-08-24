@@ -5,6 +5,7 @@ import { defineConfig, fontProviders } from "astro/config";
 // https://astro.build/config
 export default defineConfig({
   vite: {
+    base: "/homepage",
     plugins: [tailwindcss()],
   },
   fonts: [
