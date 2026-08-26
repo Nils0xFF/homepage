@@ -1,0 +1,22 @@
+// .cspell.json
+{
+  "language": "en",
+  "words": [
+    "astro",
+    "astrojs",
+    "pagefind",
+    "tsconfigs",
+    "tseslint",
+    "Nils",
+    "Geschwinde"
+  ],
+  "ignorePaths": [
+    ".cspell.json",
+    ".git/",
+    ".gitattributes",
+    ".gitignore",
+    ".gitignore",
+    ".vscode/**",
+    "node_modules"
+  ]
+}
