@@ -1,17 +1,22 @@
 // @ts-check
 import tailwindcss from "@tailwindcss/vite";
-import { defineConfig, fontProviders } from "astro/config";
+import { defineConfig, envField, fontProviders } from "astro/config";
+import { loadEnv } from "vite";
 
 import sitemap from "@astrojs/sitemap";
 
-const SITE_URL = process.env.SITE_URL;
+const { SITE_URL } = loadEnv(
+	process.env.NODE_ENV || "development",
+	process.cwd(),
+	"",
+);
+
 // https://astro.build/config
 export default defineConfig({
 	site: SITE_URL ?? "https://localhost:4321",
 	vite: {
 		plugins: [tailwindcss()],
 	},
-
 	fonts: [
 		{
 			provider: fontProviders.local(),
@@ -47,6 +52,14 @@ export default defineConfig({
 			},
 		},
 	],
-
 	integrations: [sitemap()],
+	env: {
+		schema: {
+			SITE_URL: envField.string({
+				context: "server",
+				access: "secret",
+				default: "https://localhost:4321",
+			}),
+		},
+	},
 });
