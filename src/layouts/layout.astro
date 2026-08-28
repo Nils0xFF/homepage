@@ -1,0 +1,33 @@
+---
+import { Font } from "astro:assets";
+import "../styles/global.css";
+
+import { defaultLang } from "@/i18n";
+import { SEO, type SEOProps } from "astro-seo";
+import LanguagePicker from "../components/LanguagePicker.astro";
+
+interface Props {
+	seo: SEOProps;
+}
+const { seo } = Astro.props;
+
+const lang = Astro.currentLocale || defaultLang;
+---
+
+<html lang={lang} class="h-full">
+	<head>
+		<SEO {...seo} />
+		<Font cssVariable="--font-inter" preload />
+		<Font cssVariable="--font-cal" preload />
+	</head>
+	<body
+		class="relative h-full overscroll-none bg-mist-800 font-sans text-sky-400 antialiased"
+	>
+		<header class="relative">
+			<nav class="fixed top-5 right-5"><LanguagePicker /></nav>
+		</header>
+		<main class="flex h-full w-full items-center justify-center">
+			<slot />
+		</main>
+	</body>
+</html>

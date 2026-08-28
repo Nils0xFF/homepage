@@ -1,6 +1,5 @@
-// .cspell.json
 {
-  "language": "en",
+  "language": "en, de",
   "words": [
     "astro",
     "astrojs",
