@@ -13,9 +13,13 @@
     "prepare": "husky"
   },
   "dependencies": {
+    "@astrojs/alpinejs": "^1.0.0",
     "@astrojs/node": "^11.1.4",
     "@astrojs/sitemap": "^3.7.3",
+    "@tabler/icons-astro": "^3.46.0",
     "@tailwindcss/vite": "^4.3.3",
+    "@types/alpinejs": "^3.13.11",
+    "alpinejs": "^3.17.0",
     "astro": "^7.2.6",
     "astro-robots-txt": "^1.0.0",
     "astro-seo": "^1.1.0",
@@ -28,6 +32,7 @@
     "@commitlint/cli": "^21.2.2",
     "@commitlint/config-conventional": "^21.2.2",
     "@eslint/js": "^10.0.1",
+    "@tailwindcss/typography": "^0.5.20",
     "@typescript-eslint/parser": "^8.68.0",
     "cspell": "^10.1.1",
     "eslint": "^10.9.1",

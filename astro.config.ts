@@ -9,6 +9,8 @@ import sitemap from "@astrojs/sitemap";
 import { defaultLang, hreflang, languages } from "@/i18n/i18n";
 import node from "@astrojs/node";
 
+import alpinejs from "@astrojs/alpinejs";
+
 const { SITE_URL } = loadEnv(
 	process.env.NODE_ENV || "development",
 	process.cwd(),
@@ -78,6 +80,7 @@ export default defineConfig({
 			},
 		}),
 		robotsTxt(),
+		alpinejs(),
 	],
 
 	env: {

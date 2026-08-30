@@ -1,9 +1,11 @@
 ---
-import { languages } from "@/i18n";
+import { defaultLang, languages } from "@/i18n";
 
 const preferredLocale = Astro.preferredLocale;
 
 if (preferredLocale && preferredLocale in languages) {
 	return Astro.redirect(`/${preferredLocale}/`);
 }
+
+return Astro.redirect(`/${defaultLang}/`);
 ---

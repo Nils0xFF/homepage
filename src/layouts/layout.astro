@@ -2,9 +2,10 @@
 import { Font } from "astro:assets";
 import "../styles/global.css";
 
+import Footer from "@/components/Footer.astro";
+import Header from "@/components/Header.astro";
 import { defaultLang } from "@/i18n";
 import { SEO, type SEOProps } from "astro-seo";
-import LanguagePicker from "../components/LanguagePicker.astro";
 
 interface Props {
 	seo: SEOProps;
@@ -14,20 +15,25 @@ const { seo } = Astro.props;
 const lang = Astro.currentLocale || defaultLang;
 ---
 
-<html lang={lang} class="h-full">
+<!doctype html>
+<!--
+Made by hand with Astro and TailwindCSS.
+Managed & hosted on Hetzner in Germany.
+-->
+<html lang={lang} x-data x-bind:data-theme="$store.theme.get()">
 	<head>
 		<SEO {...seo} />
 		<Font cssVariable="--font-inter" preload />
 		<Font cssVariable="--font-cal" preload />
 	</head>
-	<body
-		class="relative h-full overscroll-none bg-mist-800 font-sans text-sky-400 antialiased"
-	>
-		<header class="relative">
-			<nav class="fixed top-5 right-5"><LanguagePicker /></nav>
-		</header>
-		<main class="flex h-full w-full items-center justify-center">
+	<body id="top">
+		<Header />
+		<main
+			class="dots prose dark:prose-p:text-base-300 prose-a:anchor prose-hr:border-t-3 prose-img:w-full prose-kbd:bg-(--color-background) prose-kbd:border-3 prose-kbd:border-(--color-foreground) prose-p:text-base-600 prose-h1:heading-1 prose-h2:heading-2 prose-h3:heading-3 prose-h4:heading-4 prose-h5:heading-5 prose-h6:heading-6 mx-auto flex min-h-[calc(100vh-80px)] max-w-screen-xl flex-col items-center justify-center divide-y-3 xl:border-x-3"
+			role="main"
+		>
 			<slot />
 		</main>
+		<Footer />
 	</body>
 </html>
