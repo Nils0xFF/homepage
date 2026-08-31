@@ -1,14 +1,8 @@
-<header
-	class="sticky top-0 left-0 z-50 border-b-3 bg-(--color-background)"
-	role="banner"
->
+<header class="bg-background sticky top-0 left-0 z-50 border-b-3" role="banner">
 	<nav
 		class="mx-auto flex h-20 max-w-screen-xl items-center px-4 sm:px-12"
 		x-data="{ theme: $store.theme.get() }"
 		x-init='$watch("$store.theme.state", (value) => (theme = $store.theme.get()))'
 	>
-		<span class="text-primary font-heading text-xl font-bold"
-			>Nils Geschwinde</span
-		>
 	</nav>
 </header>
