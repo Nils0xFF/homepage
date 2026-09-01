@@ -80,7 +80,7 @@ export default defineConfig({
 			},
 		}),
 		robotsTxt(),
-		alpinejs(),
+		alpinejs({ entrypoint: "@/apline" }),
 	],
 
 	env: {

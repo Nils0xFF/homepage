@@ -43,7 +43,7 @@
 	--leading-xl: 1.5;
 }
 
-@theme inline {
+@theme {
 	--color-background: var(--color-base-100);
 	--color-foreground: var(--color-base-900);
 	--color-primary: var(--color-orange);
@@ -64,13 +64,13 @@
 
 @layer base {
 	:root {
-		@apply scroll-pt-20 scroll-smooth bg-(--color-background) font-sans text-(--color-foreground);
+		@apply bg-background text-foreground scroll-pt-20 scroll-smooth font-sans;
 	}
 
 	[data-theme="dark"] {
 		--color-background: var(--color-base-900);
 		--color-foreground: var(--color-base-100);
-		--color-primary: var(--color-azure-100);
+		--color-primary: var(--color-orange);
 		--color-primary-hover: var(--color-azure-200);
 		--color-primary-active: var(--color-azure-300);
 		--color-primary-foreground: var(--color-base-100);
@@ -106,7 +106,7 @@
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
 @utility anchor {
-	@apply paragraph-highlight transition hover:text-(--color-primary) focus-visible:text-(--color-primary) focus-visible:outline-3 focus-visible:outline-current focus-visible:outline-dashed;
+	@apply paragraph-highlight hover:text-primary focus-visible:text-primary transition focus-visible:outline-3 focus-visible:outline-current focus-visible:outline-dashed;
 }
 
 @utility small {

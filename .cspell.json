@@ -3,11 +3,12 @@
   "words": [
     "astro",
     "astrojs",
-    "pagefind",
-    "tsconfigs",
-    "tseslint",
+    "Geschwinde",
     "Nils",
-    "Geschwinde"
+    "pagefind",
+    "tabler",
+    "tsconfigs",
+    "tseslint"
   ],
   "ignorePaths": [
     ".cspell.json",
