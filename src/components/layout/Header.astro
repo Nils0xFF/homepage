@@ -1,4 +1,5 @@
 ---
+import LanguagePicker from "./LanguagePicker.astro";
 import ThemePicker from "./ThemePicker.astro";
 ---
 
@@ -8,7 +9,14 @@ import ThemePicker from "./ThemePicker.astro";
 		x-data="{ theme: $store.theme.get() }"
 		x-init='$watch("$store.theme.state", (value) => (theme = $store.theme.get()))'
 	>
-		<div class="ml-auto">
+		<a
+			href={`/${Astro.currentLocale}`}
+			role="link"
+			class="text-primary font-heading text-xl font-bold">Nils Geschwinde</a
+		>
+		<div class="ml-auto flex">
+			<LanguagePicker />
+			<div class="border-foreground mx-4 border-l"></div>
 			<ThemePicker />
 		</div>
 	</nav>

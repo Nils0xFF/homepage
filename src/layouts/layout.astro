@@ -2,8 +2,8 @@
 import { Font } from "astro:assets";
 import "../styles/global.css";
 
-import Footer from "@/components/Footer.astro";
-import Header from "@/components/Header.astro";
+import Footer from "@/components/layout/Footer.astro";
+import Header from "@/components/layout/Header.astro";
 import { defaultLang } from "@/i18n";
 import { SEO, type SEOProps } from "astro-seo";
 
@@ -26,21 +26,21 @@ Managed & hosted on Hetzner in Germany.
 		<Font cssVariable="--font-inter" preload />
 		<Font cssVariable="--font-cal" preload />
 	</head>
-	<body id="top">
+	<body id="top" class="relative">
 		<Header />
 		<main
-			class="pattern prose dark:prose-p:text-base-300 prose-a:anchor prose-hr:border-t-3 prose-img:w-full prose-kbd:bg-(--color-background) prose-kbd:border-3 prose-kbd:border-(--color-foreground) prose-p:text-base-600 prose-h1:heading-1 prose-h2:heading-2 prose-h3:heading-3 prose-h4:heading-4 prose-h5:heading-5 prose-h6:heading-6 relative flex min-h-[calc(100vh-80px)] w-screen max-w-none min-w-5 flex-col items-center justify-center"
+			class="pattern prose dark:prose-p:text-base-300 prose-a:anchor prose-hr:border-t-3 prose-img:w-full prose-kbd:bg-background prose-kbd:border-3 prose-kbd:border-foreground prose-p:text-base-600 prose-h1:heading-1 prose-h2:heading-2 prose-h3:heading-3 prose-h4:heading-4 prose-h5:heading-5 prose-h6:heading-6 relative flex min-h-[calc(100vh-80px)] w-screen max-w-none min-w-5 flex-col items-center justify-center"
 			role="main"
 		>
 			<div
 				class="page-border absolute top-0 bottom-0 left-0 z-40 hidden w-[calc((100vw-var(--breakpoint-xl))/2)] min-w-20 rotate-180 transition-all xl:block"
 			>
 			</div>
-			<div class="flex max-w-screen-xl flex-col items-center justify-center">
+			<div class="flex w-full max-w-screen-xl flex-col">
 				<slot />
 			</div>
 			<div
-				class="page-border absolute top-0 right-0 bottom-0 z-40 hidden w-[calc((100vw-var(--breakpoint-xl))/2)] transition-all xl:block"
+				class="page-border absolute top-0 right-0 bottom-0 z-40 hidden w-[calc((100vw-var(--breakpoint-xl))/2)] min-w-20 transition-all xl:block"
 			>
 			</div>
 		</main>

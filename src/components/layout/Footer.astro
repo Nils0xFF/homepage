@@ -1,0 +1,16 @@
+---
+import { defaultLang, useTranslations } from "@/i18n";
+
+const lang = Astro.currentLocale || defaultLang;
+
+const t = useTranslations(lang);
+---
+
+<footer
+	class="bg-background text-foreground border-foreground z-50 flex items-center border-t-5 py-12"
+	role="contentinfo"
+>
+	<nav class="mx-auto">
+		<a href={`/${lang}/imprint`}>{t("imprint")}</a>
+	</nav>
+</footer>

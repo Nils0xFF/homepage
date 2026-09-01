@@ -4,6 +4,7 @@ export const defaultSEO = {
 	title: "Nils Geschwinde",
 	titleTemplate: "%s - Homepage",
 	description: "This is my personal homepage",
+	charset: "utf-8",
 	openGraph: {
 		basic: {
 			type: "website",

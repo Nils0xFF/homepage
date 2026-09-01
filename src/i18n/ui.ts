@@ -1,12 +1,20 @@
+export const routes = {
+	de: {
+		imprint: "impressum",
+	},
+};
+
 export const ui = {
 	en: {
 		"home.hello": "Hi, my name is",
 		"home.jobTitle": "and I am a Software Engineer at",
-		"footer.imprint": "Imprint",
+		imprint: "Imprint",
+		"imprint.hint": "Responsible for content & owner:",
 	},
 	de: {
-		"home.hello": "Hallo, ich bin",
-		"home.jobTitle": "und ich bin ein Software Engineer bei",
-		"footer.imprint": "Impressum",
+		"home.hello": "Hallo, mein Name ist",
+		"home.jobTitle": "und ich bin Software Engineer bei",
+		imprint: "Impressum",
+		"imprint.hint": "Verantwortlich für den Inhalt & Eigentümer:",
 	},
 } as const;

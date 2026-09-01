@@ -1,0 +1,27 @@
+---
+import { IconDeviceDesktop, IconMoon, IconSun } from "@tabler/icons-astro";
+---
+
+<div class="flex gap-2">
+	<button
+		class="hover:text-primary-hover cursor-pointer transition"
+		:class="$store.theme.getRaw() === 'light' ? 'text-primary-active' : ''"
+		@click="$store.theme.set('light')"
+	>
+		<IconSun />
+	</button>
+	<button
+		class="hover:text-primary-hover cursor-pointer transition"
+		:class="$store.theme.getRaw() === 'auto' ? 'text-primary-active' : ''"
+		@click="$store.theme.set('auto')"
+	>
+		<IconDeviceDesktop />
+	</button>
+	<button
+		class="hover:text-primary-hover cursor-pointer transition"
+		:class="$store.theme.getRaw() === 'dark' ? 'text-primary-active' : ''"
+		@click="$store.theme.set('dark')"
+	>
+		<IconMoon />
+	</button>
+</div>
