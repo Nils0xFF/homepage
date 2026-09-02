@@ -48,13 +48,14 @@ const seo = mergeSEO({
 			<p class="block">{t("imprint.hint")}<br />Nils Geschwinde</p>
 		</div>
 
-		<div
-			class="border-foreground hover:bg-base-600 mt-4 flex justify-center rounded-lg border p-2"
+		<a
+			href={`/${lang}`}
+			class="not-prose border-foreground hover:bg-base-600 mt-4 flex items-center justify-center gap-1 rounded-lg border p-2"
 		>
-			<a href={`/${lang}`} class="not-prose flex gap-1">
-				<IconArrowBigLeft />
+			<IconArrowBigLeft />
+			<span class="text-lg">
 				{t("nav.home")}
-			</a>
-		</div>
+			</span>
+		</a>
 	</section>
 </Layout>

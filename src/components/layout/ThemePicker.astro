@@ -8,20 +8,20 @@ import { IconDeviceDesktop, IconMoon, IconSun } from "@tabler/icons-astro";
 		:class="$store.theme.getRaw() === 'light' ? 'text-primary-active' : ''"
 		@click="$store.theme.set('light')"
 	>
-		<IconSun />
+		<IconSun stroke="3" />
 	</button>
 	<button
 		class="hover:text-primary-hover cursor-pointer transition"
 		:class="$store.theme.getRaw() === 'dark' ? 'text-primary-active' : ''"
 		@click="$store.theme.set('dark')"
 	>
-		<IconMoon />
+		<IconMoon stroke="3" />
 	</button>
 	<button
 		class="hover:text-primary-hover cursor-pointer transition"
 		:class="$store.theme.getRaw() === 'auto' ? 'text-primary-active' : ''"
 		@click="$store.theme.set('auto')"
 	>
-		<IconDeviceDesktop />
+		<IconDeviceDesktop stroke="3" />
 	</button>
 </div>

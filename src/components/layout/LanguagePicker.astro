@@ -7,13 +7,13 @@ const currentPath = getBasePathFromPath(Astro.url.pathname, lang);
 
 <div class="flex gap-2">
 	<a
-		class={`not-prose cursor-pointer hover:text-primary-hover ${lang === "en" ? "text-primary-active" : ""}`}
+		class={`not-prose cursor-pointer hover:text-primary-hover font-bold ${lang === "en" ? "text-primary-active" : ""}`}
 		href={`/en${currentPath ? currentPath : ""}`}
 	>
 		EN
 	</a>
 	<a
-		class={`not-prose cursor-pointer hover:text-primary-hover ${lang === "de" ? "text-primary-active" : ""}`}
+		class={`not-prose cursor-pointer hover:text-primary-hover font-bold ${lang === "de" ? "text-primary-active" : ""}`}
 		href={`/de${currentPath ? currentPath : ""}`}
 	>
 		DE
