@@ -19,9 +19,14 @@ const t = useTranslations(lang);
 		<div
 			class="border-foreground hover:bg-base-600 mt-4 flex justify-center rounded-lg border p-2"
 		>
-			<a href={`/${lang}`} class="not-prose flex gap-1">
+			<a
+				href={`/${lang}`}
+				class="not-prose bg-base-900 hover:bg-base-700 border-base-900 text-background flex items-center justify-center gap-2 rounded-full border-2 px-4 py-2 font-bold"
+			>
 				<IconArrowBigLeft />
-				{t("nav.home")}
+				<span class="text-lg font-medium">
+					{t("nav.home")}
+				</span>
 			</a>
 		</div>
 	</section>
