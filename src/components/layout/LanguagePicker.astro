@@ -1,21 +1,20 @@
 ---
-import { getLangFromUrl, useTranslatedPath } from "@/i18n";
-import { getRouteFromUrl } from "@/i18n/utils";
-
+import { getBasePathFromPath, getLangFromUrl } from "@/i18n";
 const lang = getLangFromUrl(Astro.url);
-const route = getRouteFromUrl(Astro.url);
+
+const currentPath = getBasePathFromPath(Astro.url.pathname, lang);
 ---
 
 <div class="flex gap-2">
 	<a
 		class={`not-prose cursor-pointer hover:text-primary-hover ${lang === "en" ? "text-primary-active" : ""}`}
-		href={useTranslatedPath("en")(`/${route ? route : ""}`)}
+		href={`/en${currentPath ? currentPath : ""}`}
 	>
 		EN
 	</a>
 	<a
 		class={`not-prose cursor-pointer hover:text-primary-hover ${lang === "de" ? "text-primary-active" : ""}`}
-		href={useTranslatedPath("de")(`/${route ? route : ""}`)}
+		href={`/de${currentPath ? currentPath : ""}`}
 	>
 		DE
 	</a>

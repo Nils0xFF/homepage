@@ -12,16 +12,16 @@ import { IconDeviceDesktop, IconMoon, IconSun } from "@tabler/icons-astro";
 	</button>
 	<button
 		class="hover:text-primary-hover cursor-pointer transition"
-		:class="$store.theme.getRaw() === 'auto' ? 'text-primary-active' : ''"
-		@click="$store.theme.set('auto')"
-	>
-		<IconDeviceDesktop />
-	</button>
-	<button
-		class="hover:text-primary-hover cursor-pointer transition"
 		:class="$store.theme.getRaw() === 'dark' ? 'text-primary-active' : ''"
 		@click="$store.theme.set('dark')"
 	>
 		<IconMoon />
+	</button>
+	<button
+		class="hover:text-primary-hover cursor-pointer transition"
+		:class="$store.theme.getRaw() === 'auto' ? 'text-primary-active' : ''"
+		@click="$store.theme.set('auto')"
+	>
+		<IconDeviceDesktop />
 	</button>
 </div>

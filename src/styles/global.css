@@ -62,7 +62,7 @@
 	--color-neutral-foreground: var(--color-base-100);
 	--color-muted: var(--color-base-200);
 	--color-muted-foreground: var(--color-base-900);
-	--page-border-color: var(--color-base-800);
+	--page-border-color: var(--color-base-700);
 }
 
 @layer base {
@@ -87,7 +87,7 @@
 		--color-neutral-foreground: var(--color-base-900);
 		--color-muted: var(--color-base-800);
 		--color-muted-foreground: var(--color-base-100);
-		--page-border-color: var(--color-base-200);
+		--page-border-color: var(--color-base-400);
 	}
 
 	[x-cloak] {
@@ -186,7 +186,7 @@
 }
 
 @utility page-border {
-	background-color: var(--color-foreground);
+	background-color: var(--page-border-color);
 	mask-image: url("data:image/svg+xml;utf8,%3Csvg%20viewBox%3D%220%200%20310%201440%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20preserveAspectRatio%3D%22none%22%20style%3D%22width%3A100%25%3Bheight%3Aauto%3Bdisplay%3Ablock%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M%20105.7%2C0%20C%20110.6%2C76.8%20130.8%2C134.4%20124.1%2C288.0%20C%20117.5%2C441.6%2085.5%2C422.4%2080.7%2C576.0%20C%2075.9%2C729.6%2090.3%2C710.4%20106.1%2C864.0%20C%20121.9%2C1017.6%20158.3%2C998.4%20140.0%2C1152.0%20C%20121.7%2C1305.6%2064.9%2C1363.2%2037.6%2C1440.0%20L%20310%2C1440%20L%20310%2C0%20Z%22%2F%3E%3C%2Fsvg%3E");
 	mask-repeat: repeat-y;
 	mask-size: 100% auto;

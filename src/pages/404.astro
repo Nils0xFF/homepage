@@ -1,10 +1,28 @@
 ---
+import { getLangFromUrl, useTranslations } from "@/i18n";
 import Layout from "@/layouts/layout.astro";
 import { mergeSEO } from "@/shared/seo";
+import { IconArrowBigLeft } from "@tabler/icons-astro";
 
 const seo = mergeSEO({});
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <Layout seo={seo}>
-	<h1>There is nothing here</h1>
+	<section
+		class="mx-auto flex h-[calc(100vh-80px)] w-full max-w-screen-md flex-col items-center justify-center px-4 py-12 sm:px-12 sm:py-24"
+	>
+		<h1 class="text-hero">404 - Not found</h1>
+		<p class="text-lg">This is not the page you were looking for</p>
+		<div
+			class="border-foreground hover:bg-base-600 mt-4 flex justify-center rounded-lg border p-2"
+		>
+			<a href={`/${lang}`} class="not-prose flex gap-1">
+				<IconArrowBigLeft />
+				{t("nav.home")}
+			</a>
+		</div>
+	</section>
 </Layout>
