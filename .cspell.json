@@ -1,0 +1,22 @@
+{
+  "language": "en, de",
+  "words": [
+    "astro",
+    "astrojs",
+    "Geschwinde",
+    "Nils",
+    "pagefind",
+    "tabler",
+    "tsconfigs",
+    "tseslint"
+  ],
+  "ignorePaths": [
+    ".cspell.json",
+    ".git/",
+    ".gitattributes",
+    ".gitignore",
+    ".gitignore",
+    ".vscode/**",
+    "node_modules"
+  ]
+}
