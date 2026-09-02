@@ -16,18 +16,14 @@ const t = useTranslations(lang);
 	>
 		<h1 class="text-hero">404 - Not found</h1>
 		<p class="text-lg">This is not the page you were looking for</p>
-		<div
-			class="border-foreground hover:bg-base-600 mt-4 flex justify-center rounded-lg border p-2"
+		<a
+			href={`/${lang}`}
+			class="not-prose bg-base-900 hover:bg-base-700 border-base-900 dark:bg-base-100 dark:hover:bg-base-200 dark:border-base-100 text-background flex items-center justify-center gap-2 rounded-full border-2 px-4 py-2 font-bold"
 		>
-			<a
-				href={`/${lang}`}
-				class="not-prose bg-base-900 hover:bg-base-700 border-base-900 text-background flex items-center justify-center gap-2 rounded-full border-2 px-4 py-2 font-bold"
-			>
-				<IconArrowBigLeft />
-				<span class="text-lg font-medium">
-					{t("nav.home")}
-				</span>
-			</a>
-		</div>
+			<IconArrowBigLeft />
+			<span class="text-lg font-medium">
+				{t("nav.home")}
+			</span>
+		</a>
 	</section>
 </Layout>
