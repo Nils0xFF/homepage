@@ -1,0 +1,67 @@
+---
+export const prerender = true;
+
+export function getStaticPaths() {
+	return Object.keys(languages).map((lang) => ({ params: { lang } }));
+}
+
+import { getLanguageAlternates, languages, useTranslations } from "@/i18n";
+import Layout from "@/layouts/layout.astro";
+import { mergeSEO } from "@/shared/seo";
+
+import {
+	IconArrowBigLeft,
+	IconBuilding,
+	IconMail,
+	IconNumber,
+	IconSignRightFilled,
+} from "@tabler/icons-astro";
+
+const { lang } = Astro.params as { lang: keyof typeof languages };
+
+const t = useTranslations(lang);
+
+const seo = mergeSEO({
+	languageAlternates: getLanguageAlternates(Astro.url.pathname, lang),
+});
+---
+
+<Layout seo={seo}>
+	<section
+		class="mx-auto flex h-[calc(100vh-80px)] w-full max-w-screen-md flex-col items-center px-4 py-12 sm:px-12 sm:py-24"
+	>
+		<div>
+			<h1>{t("imprint")}</h1>
+			<h2>Nils Geschwinde</h2>
+			<p class="text-foreground! block text-lg font-semibold">
+				<span class="flex items-center gap-2"
+					><IconSignRightFilled class="inline-block" />Luther Weg 67</span
+				>
+				<span class="flex items-center gap-2"
+					><IconBuilding class="inline-block" />31515 Wunstorf, Deutschland</span
+				>
+				<span class="flex items-center gap-2"
+					><IconMail class="inline-block" />
+					<a
+						class="text-foreground inline-block"
+						href="mailto:mail@nilsgeschwin.de">mail@nilsgeschwin.de</a
+					>
+				</span>
+				<span class="prose-mt-0 flex items-center gap-2"
+					><IconNumber class="inline-block" />USt-IdNr. DE336962540</span
+				>
+			</p>
+			<p class="block">{t("imprint.hint")}<br />Nils Geschwinde</p>
+		</div>
+
+		<a
+			href={`/${lang}`}
+			class="not-prose bg-base-900 hover:bg-base-700 border-base-900 dark:bg-base-100 dark:hover:bg-base-200 dark:border-base-100 text-background flex items-center justify-center gap-2 rounded-full border-2 px-4 py-2 font-bold"
+		>
+			<IconArrowBigLeft />
+			<span class="text-lg font-medium">
+				{t("nav.home")}
+			</span>
+		</a>
+	</section>
+</Layout>
