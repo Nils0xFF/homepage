@@ -1,4 +1,10 @@
 ---
+export const prerender = true;
+
+export function getStaticPaths() {
+	return Object.keys(languages).map((lang) => ({ params: { lang } }));
+}
+
 import { getLanguageAlternates, languages, useTranslations } from "@/i18n";
 import Layout from "@/layouts/layout.astro";
 import { mergeSEO } from "@/shared/seo";
