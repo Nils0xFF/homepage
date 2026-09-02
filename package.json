@@ -10,7 +10,8 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "prepare": "husky"
+    "prepare": "husky",
+    "start": "node ./dist/server/entry.mjs"
   },
   "dependencies": {
     "@alpinejs/persist": "^3.17.1",
