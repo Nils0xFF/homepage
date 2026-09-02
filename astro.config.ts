@@ -63,9 +63,9 @@ export default defineConfig({
 			options: {
 				variants: [
 					{
-						weight: "100 900",
+						weight: "300 700",
 						style: "normal",
-						src: ["./src/assets/fonts/CalSans-Regular.ttf"],
+						src: ["./src/assets/fonts/CalSans.ttf"],
 					},
 				],
 			},
