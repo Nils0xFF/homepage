@@ -33,6 +33,10 @@ export const defaultSEO = {
 			{ name: "viewport", content: "width=device-width" },
 			{ name: "charset", content: "utf-8" },
 			{ name: "keywords", content: "Nils Geschwinde" },
+			{
+				name: "google-site-verification",
+				content: "EDpE2_redPZFC3LTPMxxHubyiG6IhDgrGbRsY7vze74",
+			},
 		],
 		link: [
 			{ rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
