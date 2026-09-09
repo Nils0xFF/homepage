@@ -7,6 +7,7 @@ import { IconDeviceDesktop, IconMoon, IconSun } from "@tabler/icons-astro";
 		class="hover:text-primary-hover cursor-pointer transition"
 		:class="$store.theme.getRaw() === 'light' ? 'text-primary-active' : ''"
 		@click="$store.theme.set('light')"
+		aria-label="light theme"
 	>
 		<IconSun stroke="3" />
 	</button>
@@ -14,6 +15,7 @@ import { IconDeviceDesktop, IconMoon, IconSun } from "@tabler/icons-astro";
 		class="hover:text-primary-hover cursor-pointer transition"
 		:class="$store.theme.getRaw() === 'dark' ? 'text-primary-active' : ''"
 		@click="$store.theme.set('dark')"
+		aria-label="dark theme"
 	>
 		<IconMoon stroke="3" />
 	</button>
@@ -21,6 +23,7 @@ import { IconDeviceDesktop, IconMoon, IconSun } from "@tabler/icons-astro";
 		class="hover:text-primary-hover cursor-pointer transition"
 		:class="$store.theme.getRaw() === 'auto' ? 'text-primary-active' : ''"
 		@click="$store.theme.set('auto')"
+		aria-label="system theme"
 	>
 		<IconDeviceDesktop stroke="3" />
 	</button>
