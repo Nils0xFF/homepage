@@ -18,6 +18,7 @@
     "@astrojs/alpinejs": "^1.0.0",
     "@astrojs/node": "^11.1.5",
     "@astrojs/sitemap": "^3.7.4",
+    "@playform/compress": "^0.2.5",
     "@tabler/icons-astro": "^3.46.0",
     "@tailwindcss/vite": "^4.3.3",
     "@types/alpinejs": "^3.13.11",

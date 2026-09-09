@@ -11,6 +11,8 @@ import node from "@astrojs/node";
 
 import alpinejs from "@astrojs/alpinejs";
 
+import playformCompress from "@playform/compress";
+
 const { SITE_URL } = loadEnv(
 	process.env.NODE_ENV || "development",
 	process.cwd(),
@@ -82,6 +84,7 @@ export default defineConfig({
 		}),
 		robotsTxt(),
 		alpinejs({ entrypoint: "@/apline" }),
+		playformCompress(),
 	],
 
 	env: {
