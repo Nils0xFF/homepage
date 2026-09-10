@@ -2,6 +2,8 @@
 import { Font } from "astro:assets";
 import "../styles/global.css";
 
+import themeScript from "@/scripts/theme.js?raw";
+
 import Footer from "@/components/layout/Footer.astro";
 import Header from "@/components/layout/Header.astro";
 import { defaultLang } from "@/i18n";
@@ -22,14 +24,15 @@ Managed & hosted on Hetzner in Germany.
 -->
 <html lang={lang} x-data x-bind:data-theme="$store.theme.get()">
 	<head>
+		<script is:inline set:html={themeScript} />
 		<SEO {...seo} />
 		<Font
 			cssVariable="--font-inter"
-			preload={[{ weight: "400 500", style: "normal" }]}
+			preload={[{ weight: 400, style: "normal" }]}
 		/>
 		<Font
 			cssVariable="--font-cal"
-			preload={[{ weight: "600 900", style: "normal" }]}
+			preload={[{ weight: 400, style: "normal" }]}
 		/>
 	</head>
 	<body id="top" class="relative subpixel-antialiased">
