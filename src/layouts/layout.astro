@@ -23,8 +23,14 @@ Managed & hosted on Hetzner in Germany.
 <html lang={lang} x-data x-bind:data-theme="$store.theme.get()">
 	<head>
 		<SEO {...seo} />
-		<Font cssVariable="--font-inter" preload />
-		<Font cssVariable="--font-cal" preload />
+		<Font
+			cssVariable="--font-inter"
+			preload={[{ weight: "400 500", style: "normal" }]}
+		/>
+		<Font
+			cssVariable="--font-cal"
+			preload={[{ weight: "600 900", style: "normal" }]}
+		/>
 	</head>
 	<body id="top" class="relative subpixel-antialiased">
 		<Header />
