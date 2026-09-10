@@ -1,14 +1,19 @@
 {
   "language": "en, de",
   "words": [
+    "alpinejs",
+    "apline",
     "astro",
     "astrojs",
     "Geschwinde",
     "Nils",
     "pagefind",
+    "playform",
     "tabler",
     "tsconfigs",
-    "tseslint"
+    "tseslint",
+    "unicodes",
+    "woff"
   ],
   "ignorePaths": [
     ".cspell.json",

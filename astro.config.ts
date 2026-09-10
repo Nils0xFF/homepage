@@ -37,7 +37,6 @@ export default defineConfig({
 	vite: {
 		plugins: [tailwindcss()],
 	},
-
 	fonts: [
 		{
 			provider: fontProviders.local(),
@@ -48,12 +47,12 @@ export default defineConfig({
 					{
 						weight: "100 900",
 						style: "normal",
-						src: ["./src/assets/fonts/Inter.ttf"],
+						src: ["./src/assets/fonts/Inter.woff2"],
 					},
 					{
 						weight: "100 900",
 						style: "italic",
-						src: ["./src/assets/fonts/Inter-Italic.ttf"],
+						src: ["./src/assets/fonts/Inter-Italic.woff2"],
 					},
 				],
 			},
@@ -68,7 +67,7 @@ export default defineConfig({
 						weight: "400 700",
 						style: "normal",
 						variationSettings: '"GEOM" 0',
-						src: ["./src/assets/fonts/CalSansVF.ttf"],
+						src: ["./src/assets/fonts/CalSansVF.woff2"],
 					},
 				],
 			},
@@ -84,7 +83,13 @@ export default defineConfig({
 		}),
 		robotsTxt(),
 		alpinejs({ entrypoint: "@/apline" }),
-		playformCompress(),
+		playformCompress({
+			HTML: {
+				"html-minifier-terser": {
+					removeComments: false,
+				},
+			},
+		}),
 	],
 
 	env: {
