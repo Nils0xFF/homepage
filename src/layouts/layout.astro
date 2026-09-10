@@ -22,7 +22,12 @@ const lang = Astro.currentLocale || defaultLang;
 Made by hand with Astro and TailwindCSS.
 Managed & hosted on Hetzner in Germany.
 -->
-<html lang={lang} x-data x-bind:data-theme="$store.theme.get()">
+<html
+	lang={lang}
+	x-data
+	x-bind:data-theme="$store.theme.get()"
+	x-bind:data-theme-pref="$store.theme.getRaw()"
+>
 	<head>
 		<script is:inline set:html={themeScript} />
 		<SEO {...seo} />

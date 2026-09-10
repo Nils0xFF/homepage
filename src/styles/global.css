@@ -340,3 +340,25 @@
 	hyphens: auto;
 	text-wrap: wrap;
 }
+
+.theme-icon-filled {
+	display: none;
+}
+
+[data-theme-pref="light"] [data-theme-option="light"] .theme-icon-filled,
+[data-theme-pref="dark"] [data-theme-option="dark"] .theme-icon-filled,
+[data-theme-pref="auto"] [data-theme-option="auto"] .theme-icon-filled {
+	display: block;
+}
+
+[data-theme-pref="light"] [data-theme-option="light"] .theme-icon-outline,
+[data-theme-pref="dark"] [data-theme-option="dark"] .theme-icon-outline,
+[data-theme-pref="auto"] [data-theme-option="auto"] .theme-icon-outline {
+	display: none;
+}
+
+[data-theme-pref="light"] [data-theme-option="light"],
+[data-theme-pref="dark"] [data-theme-option="dark"],
+[data-theme-pref="auto"] [data-theme-option="auto"] {
+	color: var(--color-primary-text);
+}

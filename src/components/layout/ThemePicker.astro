@@ -1,25 +1,49 @@
 ---
-import { IconDeviceDesktop, IconMoon, IconMoonFilled, IconSun, IconSunFilled, IconDeviceDesktopFilled } from "@tabler/icons-astro";
+import {
+	IconDeviceDesktop,
+	IconDeviceDesktopFilled,
+	IconMoon,
+	IconMoonFilled,
+	IconSun,
+	IconSunFilled,
+} from "@tabler/icons-astro";
 
 const themes = [
-  { id: "light", label: "light theme", Outline: IconSun, Filled: IconSunFilled },
-  { id: "dark",  label: "dark theme",  Outline: IconMoon, Filled: IconMoonFilled },
-  { id: "auto",  label: "system theme", Outline: IconDeviceDesktop, Filled: IconDeviceDesktopFilled },
+	{
+		id: "light",
+		label: "light theme",
+		Outline: IconSun,
+		Filled: IconSunFilled,
+	},
+	{
+		id: "dark",
+		label: "dark theme",
+		Outline: IconMoon,
+		Filled: IconMoonFilled,
+	},
+	{
+		id: "auto",
+		label: "system theme",
+		Outline: IconDeviceDesktop,
+		Filled: IconDeviceDesktopFilled,
+	},
 ];
 ---
 
 <div class="flex gap-2" role="group" aria-label="Theme">
-  {themes.map(({ id, label, Outline, Filled }) => (
-	<button
-		type="button"
-		class="cursor-pointer transition-colors"
-		:class={`$store.theme.getRaw() === '${id}' ? 'text-primary-text' : 'text-foreground-muted hover:text-foreground'`}
-      	:aria-pressed={`$store.theme.getRaw() === '${id}'`}
-      	@click={`$store.theme.set('${id}')`}
-		aria-label={label}
-	>
-      <Outline x-cloak x-show={`$store.theme.getRaw() !== '${id}'`} />
-      <Filled x-cloak x-show={`$store.theme.getRaw() === '${id}'`} />
-	</button>
-  ))}
+	{
+		themes.map(({ id, label, Outline, Filled }) => (
+			<button
+				type="button"
+				class="text-foreground-muted hover:text-foreground cursor-pointer transition-colors"
+				data-theme-option={id}
+				aria-label={label}
+				x-bind:aria-pressed={`$store.theme.getRaw() === '${id}'`}
+				x-on:click={`$store.theme.set('${id}')`}
+			>
+				<Outline class="theme-icon-outline" />
+				<Filled class="theme-icon-filled" />
+			</button>
+		))
+	}
 </div>

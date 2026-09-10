@@ -26,15 +26,24 @@
 
 	try {
 		const stored = localStorage.getItem("theme");
-		if (stored) pref = JSON.parse(stored);
+		if (stored) {
+			const parsed = JSON.parse(stored);
+			if (parsed === "light" || parsed === "dark" || parsed === "auto") {
+				pref = parsed;
+			}
+		}
 	} catch {
 		// Storage blocked, or a value we did not write — fall back to auto.
 	}
 
-	document.documentElement.dataset.theme =
+	const root = document.documentElement;
+
+	root.dataset.theme =
 		pref === "light" || pref === "dark"
 			? pref
 			: window.matchMedia("(prefers-color-scheme: dark)").matches
 				? "dark"
 				: "light";
+
+	root.dataset.themePref = pref;
 })();
