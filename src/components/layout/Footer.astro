@@ -16,7 +16,7 @@ const t = useTranslations(lang);
 	>
 		<nav class="flex flex-col items-start gap-6">
 			<a
-				href={`/${Astro.currentLocale}`}
+				href={`/${Astro.currentLocale}/`}
 				class="text-primary font-heading text-xl font-bold">Nils Geschwinde</a
 			>
 			<p class="small w-full"></p>
@@ -68,7 +68,7 @@ const t = useTranslations(lang);
 					<li>
 						<a
 							class="hover:text-primary inline-flex cursor-pointer text-lg font-medium shadow-none transition hover:underline focus-visible:underline"
-							href={`/${lang}/imprint`}>{t("imprint")}</a
+							href={`/${lang}/imprint/`}>{t("imprint")}</a
 						>
 					</li>
 				</ul>

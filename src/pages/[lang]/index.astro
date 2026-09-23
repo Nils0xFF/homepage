@@ -2,7 +2,7 @@
 export const prerender = true;
 
 import Layout from "@/layouts/layout.astro";
-import { mergeSEO } from "@/shared/seo";
+import { getPersonJsonLd, mergeSEO } from "@/shared/seo";
 import { getLanguageAlternates, languages, useTranslations } from "@i18n";
 
 export function getStaticPaths() {
@@ -14,11 +14,18 @@ const { lang } = Astro.params as { lang: keyof typeof languages };
 const t = useTranslations(lang);
 
 const seo = mergeSEO({
+	title: t("home.title"),
+	description: t("home.description"),
 	languageAlternates: getLanguageAlternates(Astro.url.pathname, lang),
 });
 ---
 
 <Layout seo={seo}>
+	<script
+		slot="head"
+		type="application/ld+json"
+		set:html={JSON.stringify(getPersonJsonLd(new URL("/", Astro.site)))}
+	/>
 	<section
 		class="mx-auto flex h-[calc(100vh-80px)] flex-col items-start justify-center px-4 py-12 sm:px-12 sm:py-24"
 	>
@@ -26,10 +33,11 @@ const seo = mergeSEO({
 			<span class="text-foreground my-0 text-xl leading-none font-medium">
 				{t("home.hello")}
 			</span>
-			<span
-				class="md:text-hero font-heading text-primary text-4xl leading-none font-black"
-				>Nils Geschwinde</span
+			<h1
+				class="md:text-hero font-heading text-primary not-prose m-0 text-4xl leading-none font-black"
 			>
+				Nils Geschwinde
+			</h1>
 			<span class="text-foreground my-0 text-xl leading-none font-medium">
 				{t("home.jobTitle")}&nbsp;
 				<a

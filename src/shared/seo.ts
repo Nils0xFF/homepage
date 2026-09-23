@@ -1,19 +1,20 @@
 import { type SEOProps } from "astro-seo";
 
+const avatarURL =
+	"https://2.gravatar.com/avatar/7155ff2473c37f279e7bedb0181584aa2e5f608c892b1efd7e05934f3f625ae2?size=800";
+
 export const defaultSEO = {
 	title: "Nils Geschwinde",
-	titleTemplate: "%s - Homepage",
-	description: "This is my personal homepage",
+	description: "Personal homepage of Nils Geschwinde",
 	charset: "utf-8",
 	openGraph: {
 		basic: {
 			type: "website",
-			title: "Nils Geschwinde - Homepage",
-			image:
-				"https://2.gravatar.com/avatar/7155ff2473c37f279e7bedb0181584aa2e5f608c892b1efd7e05934f3f625ae2?size=800",
+			title: "Nils Geschwinde",
+			image: avatarURL,
 		},
 		image: {
-			url: "https://2.gravatar.com/avatar/7155ff2473c37f279e7bedb0181584aa2e5f608c892b1efd7e05934f3f625ae2?size=800",
+			url: avatarURL,
 		},
 		optional: {
 			siteName: "Nils Geschwinde",
@@ -21,10 +22,8 @@ export const defaultSEO = {
 	},
 	twitter: {
 		title: "Nils Geschwinde",
-		image:
-			"https://2.gravatar.com/avatar/7155ff2473c37f279e7bedb0181584aa2e5f608c892b1efd7e05934f3f625ae2?size=800",
+		image: avatarURL,
 		imageAlt: "Nils Geschwinde",
-		description: "Personal Homepage",
 		card: "summary",
 		creator: "Nils Geschwinde",
 	},
@@ -47,17 +46,50 @@ export const defaultSEO = {
 } satisfies SEOProps;
 
 export function mergeSEO(overrides: Partial<SEOProps>): SEOProps {
+	const title = overrides.title ?? defaultSEO.title;
+	const description = overrides.description ?? defaultSEO.description;
+
 	return {
 		...defaultSEO,
 		...overrides,
 		openGraph: {
-			basic: { ...defaultSEO.openGraph?.basic, ...overrides.openGraph?.basic },
+			basic: {
+				...defaultSEO.openGraph?.basic,
+				title,
+				...overrides.openGraph?.basic,
+			},
 			optional: {
 				...defaultSEO.openGraph?.optional,
+				description,
 				...overrides.openGraph?.optional,
 			},
 			image: overrides.openGraph?.image ?? defaultSEO.openGraph?.image,
 		},
-		twitter: { ...defaultSEO.twitter, ...overrides.twitter },
+		twitter: {
+			...defaultSEO.twitter,
+			title,
+			description,
+			...overrides.twitter,
+		},
+	};
+}
+
+export function getPersonJsonLd(url: URL | string) {
+	return {
+		"@context": "https://schema.org",
+		"@type": "Person",
+		name: "Nils Geschwinde",
+		url: url.toString(),
+		image: avatarURL,
+		jobTitle: "Software Engineer",
+		worksFor: {
+			"@type": "Organization",
+			name: "Inside M2M",
+			url: "https://www.inside-m2m.com",
+		},
+		sameAs: [
+			"https://www.linkedin.com/in/nilsgeschwinde/",
+			"https://github.com/Nils0xFF",
+		],
 	};
 }
