@@ -23,6 +23,7 @@ const { SITE_URL } = loadEnv(
 export default defineConfig({
 	site: SITE_URL ?? "https://localhost:4321",
 	output: "server",
+	trailingSlash: "always",
 	adapter: node({
 		mode: "standalone",
 	}),
@@ -80,6 +81,7 @@ export default defineConfig({
 				defaultLocale: defaultLang,
 				locales: hreflang,
 			},
+			filter: (page) => new URL(page).pathname !== `${SITE_URL}/`,
 		}),
 		robotsTxt(),
 		alpinejs({ entrypoint: "@/apline" }),
